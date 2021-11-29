@@ -24,9 +24,9 @@ class App extends Component {
   searchCoords = async text => {
     try {
       this.setState({ loading: true });
-      let key = '2d248f8236fd859a3f8cdd6936411d7a';
+
       const res = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${text}&appid=${key}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${text}&appid=${process.env.REACT_APP_WEATHER_API}`
       );
 
       this.setState({
@@ -42,9 +42,9 @@ class App extends Component {
 
   getData = async () => {
     let { lon, lat } = this.state.coords;
-    let key = '2d248f8236fd859a3f8cdd6936411d7a';
+
     const fullRes = await axios.get(
-      `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&exclude=minutely&appid=${key}`
+      `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&exclude=minutely&appid=${process.env.REACT_APP_WEATHER_API}`
     );
 
     this.setState({

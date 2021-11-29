@@ -110,7 +110,7 @@ const HourlyWeather = ({ loading, hourly, timezone, location }) => {
         </section>
         <div className="weather-btn-container">
           <div style={{ textAlign: 'center', marginTop: '10px' }}>
-            <Link to="/">Back to Main</Link>
+            <Link to="/react_weather">Back to Main</Link>
           </div>
           <div style={{ textAlign: 'center', marginTop: '10px' }}>
             <Link to="/DailyDisplay">Go to Daily</Link>
